@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['simpan'])) {
-    $koneksi = new mysqli("sql203.epizy.com","epiz_31463983","dOi0ThxQGpmL","epiz_31463983_aplikasi_kas");
+include('koneksi.php');
     $username= $_POST['username'];
     $password = md5($_POST['password']);
     $email = $_POST['email'];

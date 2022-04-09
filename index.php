@@ -5,7 +5,7 @@
         } else {
             echo '<script>document.location.href= "login.php"</script>';
         }
-        $koneksi = new mysqli("sql203.epizy.com","epiz_31463983","dOi0ThxQGpmL","epiz_31463983_aplikasi_kas");
+include('koneksi.php');
         if(isset($_GET['action']) && $_GET['action'] == 'logout'){
             session_destroy();
             echo '<script>document.location.href= "login.php"</script>';
@@ -95,7 +95,7 @@ font-size: 16px;"> <?= date('Y-m-d H:i:s') ?> &nbsp; <a href="?action=logout" cl
                     </li>
 
                      <li style="width: 100%;">
-                        <a  href="?page=laporan"><i class="bi bi-clipboard-pulse"></i> Laporan Kas</a>
+                        <a  href="?page=laporan"><i class="bi bi-clipboard-pulse"></i> Rekapitulasi Kas</a>
                     </li>
                 </ul>
                

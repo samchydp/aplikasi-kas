@@ -1,7 +1,7 @@
 <?php
 session_start();
+include('koneksi.php');
 if (isset($_POST['simpan'])) {
-    $koneksi = new mysqli("sql203.epizy.com","epiz_31463983","dOi0ThxQGpmL","epiz_31463983_aplikasi_kas");
     $username= $_POST['user'];
     $password = md5($_POST['password']);
 
@@ -16,11 +16,11 @@ if (isset($_POST['simpan'])) {
             </script>
         <?php 
     } else {
-        echo '<script type="text/javascript">
-                alert("Username / Password Salah!");
-                window.location.href="login.php";
-            </script>';
-        // var_dump($koneksi);
+        // echo '<script type="text/javascript">
+        //         alert("Username / Password Salah!");
+        //         window.location.href="login.php";
+        //     </script>';
+        var_dump($koneksi);
     }
 }
 ?>
