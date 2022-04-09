@@ -1,3 +1,4 @@
+
  <!-- BOOTSTRAP STYLES-->
 
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -39,8 +40,8 @@
                         <div class="panel-body">
                             <?php
                                         $sql = mysqli_query($koneksi, "select * from kas where jenis = 'keluar' ");
-                            
-                            include('page/filter.php') 
+
+                            include('page/filter.php');
 
                             ?>
                             <div class="table-responsive">
@@ -104,9 +105,7 @@
 
                                             <td>
 
-                                                <a id="edit_data" data-toggle="modal" data-target="#edit-<?= $data['kode'] ?>" data-id="<?php echo 
-
-                                                ['kode'] ?>" data-ket="<?php echo $data['keterangan'] ?>" data-tgl="<?php echo $data ['tgl'] ?>" data-jumlah="<? php echo $data ['keluar'] ?>" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
+                                                <a id="edit_data" data-toggle="modal" data-target="#edit-<?= $data['kode'] ?>"  class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
 
 
 

@@ -112,26 +112,24 @@ font-size: 16px;"> <?= date('Y-m-d H:i:s') ?> &nbsp; <a href="?action=logout" cl
 
                         $page = isset($_GET['page']) ? $_GET['page']: null;
                         $aksi = isset($_get['aksi']) ? $_get['aksi']: null;
-
-                        if ($page =="users") {
-                            if ($aksi == "") {
+                        switch ($page) {
+                            case 'users':
                                 include "page/users/users.php";
-                            }
-                        } elseif ($page =="masuk") {
-                            if ($aksi == "") {
-                                include "page/kas_masuk/masuk.php";
-                            }
-                        } elseif ($page =="keluar") {
-                            if ($aksi == "") {
-                                include "page/kas_keluar/keluar.php";
-                            }
-                        } elseif ($page =="laporan") {
-                            if ($aksi == "") {
+                                break;
+                            case 'masuk':
+                                include "page/kas_masuk/$page.php";
+                                break;
+                            case 'keluar':
+                                include("page/kas_keluar/$page.php");
+                                break;
+                            case 'laporan':
                                 include "page/laporan_kas/laporan.php";
-                            }
-                        } elseif ($page =="") {
+                                break;
+                            
+                            default:
                                 include "home.php";
-                            }
+                                break;
+                        }
     
                         ?>
                     </div>
