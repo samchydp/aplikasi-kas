@@ -226,7 +226,7 @@ function exportF(elem) {
   console.log(elem);
 
   elem.setAttribute("href", url);
-  elem.setAttribute("download", "export.xls"); // Choose the file name
+  elem.setAttribute("download", "RekapitulasiKas.xls"); // Choose the file name
   return false;
 }
 </script>

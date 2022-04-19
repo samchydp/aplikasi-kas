@@ -3,24 +3,31 @@ session_start();
 include('koneksi.php');
 if (isset($_POST['simpan'])) {
     $username= $_POST['user'];
-    $password = md5($_POST['password']);
 
-    $sql = $koneksi->query("select * from user where username = '$username' or email = '$username' and password='$password'");
-    if ($sql->num_rows > 0) {
-    	while($row = $sql->fetch_assoc()) {
+    $password = $_POST['password'];
+    // return;
+    $user = null;
+    $sql = mysqli_query($koneksi,"select * from user where (username = '".$username."' or email = '$username') and password = '".$password."' ");
+    	while($row = mysqli_fetch_array($sql)) {
 		    $_SESSION['user'] = $row;
+		    $user = $row;
+    		$sql = mysqli_query($koneksi,"update user set Status = now() where id_user=".$row['id_user']);
+    		break;
+
 		  }
+
+    if ($user) {
         ?> 
             <script type="text/javascript">
                 window.location.href="index.php";
             </script>
         <?php 
     } else {
-        // echo '<script type="text/javascript">
-        //         alert("Username / Password Salah!");
-        //         window.location.href="login.php";
-        //     </script>';
-        var_dump($koneksi);
+        echo '<script type="text/javascript">
+                alert("Username / Password Salah!");
+                window.location.href="login.php";
+            </script>';
+        // var_dump($koneksi);
     }
 }
 ?>

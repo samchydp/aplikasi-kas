@@ -2,11 +2,11 @@
 if (isset($_POST['simpan'])) {
 include('koneksi.php');
     $username= $_POST['username'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
+    
     $email = $_POST['email'];
 
-    $sql = $koneksi->query("insert into user (username, email, password)values('$username','$email', '$password')");
-    // var_dump($koneksi);
+    $sql = mysqli_query($koneksi,"insert into user (username, email, password)values('$username','$email', '$password')");
     if ($sql) {
         ?> 
             <script type="text/javascript">

@@ -7,7 +7,9 @@
         }
 include('koneksi.php');
         if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+            $sql = mysqli_query($koneksi,"update user set Status = null where id_user=".$_SESSION['user']['id_user']);
             session_destroy();
+
             echo '<script>document.location.href= "login.php"</script>';
         }
     ?> 
