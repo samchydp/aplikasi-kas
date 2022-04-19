@@ -251,7 +251,7 @@
 
                                         <div class="modal-header">
 
-                                            <h4 class="modal-title" id="myModalLabel">Form Tambah Data Kas Masuk</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Form Tambah Data Kas Keluar</h4>
 
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
