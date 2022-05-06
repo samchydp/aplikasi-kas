@@ -55,7 +55,7 @@ include('koneksi.php');
 			      			<h3 class="mb-4">REGISTER</h3>
 			      		</div>
 								<div class="w-100">
-									<p class="social-media d-flex justify-content-end">
+									<p class="social-media d-flex justify-content-end">	
 									</p>
 								</div>
 			      	</div>

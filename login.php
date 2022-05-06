@@ -54,9 +54,12 @@ if (isset($_POST['simpan'])) {
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-10">
-					<div class="wrap d-md-flex">
-						<div class="img" background-repeat: no-repeat; background-attachment: fixied; background-position: center; style="background-image: url(images/bg_1.png);">
+				<div class="col-md-12 col-lg-10" style="background: transparent;display: flex;">
+					
+					<div class="wrap d-md-flex" style="background: transparent;">
+						<div class="img">
+						<img src="images/bg_1.png" style="width: 100%;height: auto;" />
+							
 			      </div>
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">

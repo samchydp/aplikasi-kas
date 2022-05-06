@@ -1,12 +1,12 @@
 <?php
 if (isset($_POST['simpan'])) {
-    $koneksi = new mysqli("sql203.epizy.com","epiz_31463983","dOi0ThxQGpmL","epiz_31463983_aplikasi_kas");
+include('koneksi.php');
     $username= $_POST['user'];
-    $old_password = md5($_POST['old_password']);
-    $new_password = md5($_POST['new_password']);
-    $confirm_new_password = md5($_POST['confirm_new_password']);
+    // $old_password = md5($_POST['old_password']);
+    $new_password = $_POST['new_password'];
+    $confirm_new_password = $_POST['confirm_new_password'];
 
-    $sql = $koneksi->query("select * from user where username = '$username' or email = '$username' and password='$old_password'");
+    $sql = $koneksi->query("select * from user where username = '$username' or email = '$username'");
     if ($sql->num_rows > 0) {
     	if($new_password != $confirm_new_password) {
 				echo '<script type="text/javascript">
@@ -14,7 +14,7 @@ if (isset($_POST['simpan'])) {
                 window.location.href="forget.php";
             </script>';    		
     	} else {
-		    $sql = $koneksi->query("update set password = '$new_password' where username = '$username' or email = '$username'");
+		    $sql = $koneksi->query("update user set password = '$new_password' where username = '$username' or email = '$username'");
 
         ?> 
             <script type="text/javascript">
@@ -71,10 +71,10 @@ if (isset($_POST['simpan'])) {
 			      			<label class="label" for="name">Username / Email</label>
 			      			<input name="user" autocomplete="off" class="form-control" value="" placeholder="Username" required>
 			      		</div>
-		            <div class="form-group mb-3">
+		            <!-- <div class="form-group mb-3">
 		            	<label class="label" for="password">Old Password</label>
 		              <input type="password" class="form-control" name="old_password" placeholder="Password" required>
-		            </div>
+		            </div> -->
 		            <div class="form-group mb-3">
 		            	<label class="label" for="password">New Password</label>
 		              <input type="password" class="form-control" name="new_password" placeholder="Password" required>
