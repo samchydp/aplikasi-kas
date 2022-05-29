@@ -105,7 +105,7 @@
 
                                             <td>
 
-                                                <a id="edit_data" data-toggle="modal" data-target="#edit-<?= $data['kode'] ?>"  class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
+                                                <a id="edit_data" data-toggle="modal" data-target="#edit-<?= str_replace('.', '-', $data['kode']) ?>"  class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
 
 
 
@@ -125,7 +125,7 @@
 
                                         </tr>
 
-                                        <div class="modal fade" id="edit-<?= $data['kode'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="edit-<?= str_replace('.', '-', $data['kode']) ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
                                 <div class="modal-dialog">
 
